@@ -1,0 +1,147 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    background-color: rgb(255, 206, 240); /* Light pink background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    font-family: 'Georgia', serif; /* Classic font for a letter feel */
+}
+
+/* Container for all letters */
+.letter-container {
+    position: relative; /* Needed for z-index to work */
+    width: 600px; /* Fixed width for the container */
+    height: 300px; /* Fixed height for the container */
+}
+
+/* Individual letter styling */
+.letter {
+    background-color: rgb(255, 247, 213); /* Light yellow background */
+    width: 100%; /* Full width of the container */
+    padding: 30px;
+    border: 1px solid #000; /* Black border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6; /* Improved readability */
+    position: absolute; /* Position letters absolutely within the container */
+    top: 0;
+    left: 0;
+}
+
+/* Stacking letters with z-index */
+#letter1 {
+    z-index: 3; /* Topmost letter */
+    transform: rotate(2deg); /* Slight rotation for a natural look */
+}
+
+#letter2 {
+    z-index: 2; /* Middle letter */
+    transform: rotate(-1deg); /* Slight rotation */
+    top: 10px; /* Slight offset for stacking effect */
+    left: 10px;
+}
+
+#letter3 {
+    z-index: 1; /* Bottom letter */
+    transform: rotate(3deg); /* Slight rotation */
+    top: 20px; /* Slight offset for stacking effect */
+    left: -10px;
+}
+
+/* Button container styling */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Spacing between buttons */
+    margin-top: 20px; /* Space above the buttons */
+}
+
+/* Button styling */
+.btn {
+    padding: 10px 20px;
+    border: 1px solid #000; /* Black border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px;
+    font-family: 'Georgia', serif; /* Consistent font */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Yes button styling */
+.btn.yes {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+}
+
+.btn.yes:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* No button styling */
+/* No button styling with animation */
+.btn.no {
+    background-color: #f44336; /* Red background */
+    color: white; /* White text */
+    transition: all 0.5s ease; /* Smooth transition for all properties */
+}
+
+.btn.no:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .letter-container {
+        width: 400px;
+    }
+
+    .letter {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 425px) {
+    .letter-container {
+        width: 90%; /* Full width on small screens */
+    }
+
+    .letter {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+/* Animation to move the letter out of the screen */
+@keyframes slideOut {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  
+  .slide-out {
+    animation: slideOut 1s forwards;
+  }
