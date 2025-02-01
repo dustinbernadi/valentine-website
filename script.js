@@ -30,43 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// script.js
-document.addEventListener("DOMContentLoaded", function () {
-    // Get all "Yes" buttons
-    const yesButtons = document.querySelectorAll(".btn.yes");
+const letter1 = document.getElementById('letter1')
+const letter2 = document.getElementById('letter2')
+const yes1 = document.getElementById('yesY1')
+const yes2 = document.getElementById('yesY2')
 
-    // Add click event listener to each "Yes" button
-    yesButtons.forEach((button) => {
-        button.addEventListener("click", function () {
-            showNextLetter(button);
-        });
-    });
-
-    // Function to show the next letter
-    function showNextLetter(button) {
-        const currentLetter = button.closest(".letter"); // Get the current letter
-        const nextLetter = currentLetter.nextElementSibling; // Get the next letter
-
-        if (nextLetter) {
-            // Hide the current letter
-            currentLetter.style.display = "none";
-            // Show the next letter
-            nextLetter.style.display = "block";
-        } else {
-            alert("No more letters!"); // Notify if there are no more letters
-        }
-    }
-});
-
-function animateLetter(letterId) {
-    const letter = document.getElementById(letterId);
-    if (letter) {
-      // Add the animation class to the letter
-      letter.classList.add("slide-out");
-  
-      // Remove the letter from the DOM after the animation completes
-      setTimeout(() => {
-        letter.remove();
-      }, 1000); // 1000ms = 1s (duration of the animation)
-    }
-  }
+yes1.addEventListener('click', () => letter1.style.animationPlayState = "running")
+yes2.addEventListener('click', () => letter2.style.animationPlayState = "running")
