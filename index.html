@@ -12,11 +12,14 @@
       <div class="letter" id="letter1">
         <p>Dear someone</p>
         <p>
-          happy valentine, i hope you will always be happy wherever you are 💕💕💕
+          happy valentine, i hope you will always be happy wherever you are
+          💕💕💕
         </p>
         <p>do you want to be my valentine? (yes please🥺)</p>
         <div class="button-container">
-          <button class="btn yes" onclick="animateLetter('letter1')">Yes</button>
+          <button class="btn yes" id="yesY1">
+            Yes
+          </button>
           <button class="btn no">No</button>
         </div>
       </div>
@@ -25,10 +28,13 @@
       <div class="letter" id="letter2">
         <p>HEY HEY HEY</p>
         <p>
-          you're so kind, no wonder i like you. anyway press the button  again, i have a gift for you
+          you're so kind, no wonder i like you. anyway press the button again, i
+          have a gift for you
         </p>
         <div class="button-container">
-          <button class="btn yes" onclick="animateLetter('letter2')">Yes</button>
+          <button class="btn yes" id="yesY2">
+            Yes
+          </button>
           <button class="btn no">No</button>
         </div>
       </div>
@@ -36,17 +42,17 @@
       <!-- Letter 3 -->
       <div class="letter" id="letter3">
         <p>Tada</p>
-        <p>
-          heres a chocolate for you, i hope you always be happy ❤️
-        </p>
-        <img src="chocolate.png" alt="" width="80px" height="80px">
-        </div>
+        <p>heres a chocolate for you, i hope you always be happy ❤️</p>
+        <img src="chocolate.png" alt="" width="80px" height="80px" />
       </div>
+    </div>
 
-    <audio controls autoplay style="display: none;">
+    <footer>
+      <p>play me while you open this!</p>
+    <audio controls autoplay loop>
       <source src="Cute.mp3" type="audio/mp3" />
     </audio>
-
+  </footer>
     <script src="script.js"></script>
   </body>
 </html>
